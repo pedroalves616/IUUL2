@@ -10,35 +10,7 @@ namespace ATV2
     {
 
         protected internal List<Aluno> Alunos { get; set; }
-        //private String codigo = "TURMA";
 
-        //protected internal String Codigo
-        //{
-        //    get
-        //    {
-        //        return codigo;
-        //    }
-        //    set
-        //    {
-        //        //gerando número aleatório
-        //        Random r = new();
-        //        String random = r.Next(0, 999).ToString();
-
-        //        //removendo whitespaces do parâmetro e transformando em maiúsculo
-        //        value = value.Trim().ToUpper();
-
-        //        //gerando código "único"
-        //        codigo = codigo + value + random;
-        //    }
-        //}
-
-        //public Turma(String codigo, List<Aluno> alunos)
-        //{
-        //    Alunos = new();
-        //    this.Codigo = codigo;
-        //    foreach (var aluno in alunos)
-        //        this.InsereAlunoTurma(aluno);
-        //}
 
         public void AdicionarAlunoTurma(Aluno alunoNovo)
         {
