@@ -42,15 +42,14 @@ namespace ATV2
 
         public void AdicionarAlunoTurma(Aluno alunoNovo)
         {
-          //percorrendo lista de alunos
+          
             for (int i = 0; i < this.Alunos.Count; i++)
             {
                 var aluno = this.Alunos[i];
-                Console.WriteLine(aluno);
                 if (aluno.Equals(alunoNovo))
                     Console.WriteLine("Aluno já cadastrado na turma.");
                 else
-                    this.Alunos.Add(a);
+                    this.Alunos.Add(aluno);
             }
         }
         public void RemoveAlunoTurma(Aluno aluno)
