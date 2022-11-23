@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ATV1
 {
-    abstract class ValidaCliente
+    internal class ValidaCliente
     {
 
         public String ValidaNOME(string nome)
@@ -22,34 +24,66 @@ namespace ATV1
         protected long ValidaCpf(string cpf)
 
         {
-            valida:
+        valida:
             if (cpf.Length != 11)
             {
                 Console.WriteLine("Erro: CPF deve conter 11 dígitos.");
                 cpf = Console.ReadLine();
                 goto valida;
             }
-            
-           if (    cpf == "00000000000"|| cpf == "11111111111"|| cpf == "22222222222"|| cpf == "33333333333" || cpf == "44444444444"
-                || cpf == "55555555555"|| cpf == "66666666666"|| cpf == "77777777777"|| cpf == "88888888888"|| cpf == "99999999999")  
+
+            if (cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444"
+                 || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
             {
                 Console.WriteLine("Erro: CPF não deve conter numeros iguais.");
+                cpf = Console.ReadLine();
                 goto valida;
             }
 
-                    return long.Parse(cpf);
+            return long.Parse(cpf);
 
 
         }
-        protected float ValidaRenda(string renda) {
+        protected float validaRenda(string renda) {
 
-            float.Parse(renda);
-            if (renda<0)
+
+            if (renda.Contains(','))
             {
-
+                Console.WriteLine("Renda validada");
+                renda = Console.ReadLine();
+            }
+            float rendaValidada = float.Parse(renda);
+            if (rendaValidada > 0)
+            {
+                Console.WriteLine("Renda validada");
+                renda = Console.ReadLine();
             }
 
-            
+            return (rendaValidada);
+
+
+        }
+        protected DateTime ValidaDataNascimento(string dt)
+        {
+            DateTime dataEmDateTime = DateTime.ParseExact(dt, "dd/MM/yyyy", CultureInfo.CreateSpecificCulture("pt-BR"));
+
+            return DateTime.Parse(dt);
+        
+        }
+        protected char ValidaEstadoCivil(string estadocivil)
+        {
+            validaEstado:
+            if (estadocivil == "C" || estadocivil == "S" || estadocivil == "V" || estadocivil == "D") {
+                Console.WriteLine("Estado civil  validado");
+            }
+            else
+            {
+                Console.WriteLine("Estado civil não validado");
+                estadocivil = Console.ReadLine();
+                goto validaEstado;
+            }
+            return char.Parse(estadocivil);
+
         }
     }
 }

@@ -8,10 +8,12 @@ namespace ATV1
         static void Main(string[] args)
         {
 
-            Cliente dt = new Cliente("PEDROO","22222222222");
+            Cliente dt = new Cliente("PEDROO", "22222222232", "S", "10,00)");
+
+           
 
 
-            
+
 
         }
     }

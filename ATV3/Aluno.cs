@@ -24,11 +24,11 @@ namespace ATV3
         }
 
 
-        public void NotasFinais(Aluno a, float p1, float p2)
+        public void NotasFinais(Aluno nota, float p1, float p2)
         {
-            a.P1 = p1;
-            a.P2 = p2;
-            a.NF = (p1 + p2) / 2;
+            nota.P1 = p1;
+            nota.P2 = p2;
+            nota.NF = (p1 + p2) / 2;
         }
 
 
